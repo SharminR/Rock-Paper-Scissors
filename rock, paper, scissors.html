@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Rock, Paper, Scissors</title>
-  </head>
-  <body>
-    <p>Do you choose rock, paper or scissors?</p>
-    <form id="userChoice"userChoice>
-  <select name="rock paper scissors">
-    <option value="rock">Rock</option>
-    <option value="paper">Paper</option>
-    <option value="scissors">Scissors</option>
-  </select>
+<head>
+  <meta charset="utf-8">
+  <title>Rock, Paper, Scissors</title>
+</head>
+<body onload="compare()">
+  <p>Do you choose rock, paper or scissors?</p>
+  <form>
+    <select name="rock paper scissors" id="userChoice">
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+  </form>
+  <button onclick=>Submit</button>
+
   <br><br>
-  <button type="button" onclick="compare()">Submit</button>
-  <div id="computerChoice">
-
+  <div>
+    Computer chose: <span id="computerChoice"></span>
   </div>
-  <div id="result">
+  <div id="result"></div>
 
-  </div>
-</form>
-
-<script type="text/javascript" src="rock, paper, scissors.js">
-</script>
-  </body>
+  <script type="text/javascript" src="rock, paper, scissors.js">
+  </script>
+</body>
 </html>
