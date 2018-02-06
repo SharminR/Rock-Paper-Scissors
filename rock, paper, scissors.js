@@ -1,53 +1,63 @@
-var userChoice = document.getElementById("userChoice").value;
-console.log(userChoice);
 
-function AiChoice () {
+function getComputerChoice() {
   var computerChoice = Math.random();
   if (computerChoice <0.34){
     document.getElementById("computerChoice").innerHTML = "Rock";
-    //computerChoice = "Rock";
+    computerChoice = "Rock";
   } else if(computerChoice <=0.67){
     document.getElementById("computerChoice").innerHTML = "Paper";
-    //computerChoice = "Paper";
+    computerChoice = "Paper";
   } else {
     document.getElementById("computerChoice").innerHTML = "Scissors";
-    //computerChoice = "Scissors";
+    computerChoice = "Scissors";
   }
-  //return computerChoice;
+  return computerChoice;
 }
 
-function compare(){
-  var AiMove = AiChoice();
-  console.log(AiMove);
+function decideWinner(){
+  var userChoice = document.getElementById("userChoice").value;
+  console.log("My choice: " + (userChoice));
 
-    if (AiMove == userChoice) {
+  var getComputerMove = getComputerChoice();
+  console.log("Computer choice: " + (getComputerMove));
+
+    if (getComputerMove == userChoice) {
         document.getElementById("result").innerHTML = "The result is a tie!";
+        return;
     }
-    
-    while (userChoice == "Rock") {
-        if (AiMove == "Scissors") {
+
+    if (userChoice == "Rock") {
+        if (getComputerMove == "Scissors") {
             document.getElementById("result").innerHTML = "You win";
+            return;
         }
         else {
             document.getElementById("result").innerHTML = "AI wins";
+            return;
         }
     }
 
-    while (userChoice == "Paper") {
-        if (AiMove == "Scissors") {
+    if (userChoice == "Paper") {
+        if (getComputerMove == "Rock") {
             document.getElementById("result").innerHTML = "You win";
+            return;
         }
         else {
             document.getElementById("result").innerHTML = "AI wins";
+            return;
         }
     }
 
-    while (userChoice == "Scissors") {
-        if (AiMove == "Paper") {
+    if (userChoice == "Scissors") {
+        if (getComputerMove == "Paper") {
             document.getElementById("result").innerHTML = "You win";
         }
         else {
             document.getElementById("result").innerHTML = "AI wins";
         }
     }
+}
+
+function rockPaperScissors(){
+  decideWinner();
 }
